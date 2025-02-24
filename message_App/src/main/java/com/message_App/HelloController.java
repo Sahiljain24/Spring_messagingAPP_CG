@@ -16,6 +16,9 @@ public class HelloController {
         return "Hello " +name + " from BridgeLabs";
     }
 
-   
+    @GetMapping("/hello/param/{name}")
+    public String greetparam(@PathVariable String name ){
+        return "Hello " +name + " from BridgeLabs";
+    }
 
 }
