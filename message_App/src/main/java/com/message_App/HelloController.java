@@ -3,6 +3,8 @@ package com.message_App;
 
 import org.springframework.web.bind.annotation.*;
 
+import javax.xml.transform.sax.SAXResult;
+
 @RestController
 @RequestMapping("/api")
 public class HelloController {
@@ -19,6 +21,11 @@ public class HelloController {
     @GetMapping("/hello/param/{name}")
     public String greetparam(@PathVariable String name ){
         return "Hello " +name + " from BridgeLabs";
+    }
+
+    @PostMapping("/hello/user")
+    public String hello(@RequestBody UserDTO user){
+        return "Hello " + user.getFirstName() + " " +user.getLastName() ;
     }
 
 }
